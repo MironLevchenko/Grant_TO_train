@@ -1,7 +1,106 @@
-*{
-    padding: 0;
+body, html {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
 }
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    
- }
+
+#wrapper {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh; /* Минимальная высота вьюпорта */
+    padding-bottom: 40px; /* Отступ снизу равен высоте футера */
+}
+
+#header {
+    grid-area: header;
+    background-color: #f0f0f0;
+}
+
+#content {
+    grid-area: content;
+    background-color: hsl(0, 0%, 100%);
+    overflow-y: auto; /* Добавляет вертикальную прокрутку, если содержимое превышает высоту */
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Размеры могут быть адаптированы в зависимости от ваших нужд */
+    gap: 20px; /* Отступ между колонками */
+}
+
+#sideBar {
+    grid-area: sidebar;
+    background-color: #e0e0e0;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #d0d0d0;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Убедитесь, что футер всегда наверху */
+}
+.containerIVM {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Один столбец занимает оставшееся пространство, второй - содержимое */
+    grid-template-rows: auto 1fr; /* Первая строка под контент, вторая занимает оставшееся пространство */
+    width: 100%; /* или конкретная ширина */
+    height: 100vh; /* или конкретная высота */
+    position: relative;
+}
+
+.image-slider {
+    grid-column: 2 / 3; /* Размещаем во втором столбце */
+    grid-row: 1 / 2; /* Размещаем в первой строке */
+    width: 30vh; /* Конкретная ширина для слайдера */
+    height: 30vh; /* Конкретная высота для слайдера */
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slider-image.visible {
+    opacity: 1;
+}
+@media screen and (max-width: 768px) {
+    #wrapper {
+        grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "footer footer footer";
+        grid-template-columns: 1fr 2fr;
+    }
+    #content {
+        display: grid;
+        grid-template-columns: 1fr; /* Создает один столбец, занимающий всю доступную ширину */
+        gap: 5px; /* Опционально, добавляет пространство между элементами */
+    }
+}
+@media screen and (max-width: 1200px) {
+    #wrapper {
+        grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "footer footer footer";
+        grid-template-columns: 1fr 2fr;
+    }
+    #content {
+        display: grid;
+        grid-template-columns: 1fr; /* Создает один столбец, занимающий всю доступную ширину */
+        gap: 5px; /* Опционально, добавляет пространство между элементами */
+    }
+}
