@@ -11,7 +11,7 @@ body, html {
         "header header header"
         "sidebar content content"
         "footer footer footer";
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 12% auto;
     min-height: 100vh; /* Минимальная высота вьюпорта */
     padding-bottom: 40px; /* Отступ снизу равен высоте футера */
     grid-gap: 0; 
@@ -36,7 +36,9 @@ body, html {
     width: 100%;
     background-color: #e0e0e0;
 }
-
+#textTO{
+    overflow-wrap: break-word;
+}
 #footer {
     grid-area: footer;
     background-color: #d0d0d0;
@@ -46,17 +48,14 @@ body, html {
     width: 100%;
     z-index: 1000; /* Убедитесь, что футер всегда наверху */
 }
-#containerIVM {
-    display: grid;
-    grid-template-columns: 1fr auto; /* Один столбец занимает оставшееся пространство, второй - содержимое */
-    grid-template-rows: auto 1fr; /* Первая строка под контент, вторая занимает оставшееся пространство */
-    width: 100%; /* или конкретная ширина */
-    height: 100vh; /* или конкретная высота */
-    position: relative;
-}
-
 #containerModel{
-    width: 30rem; /* Конкретная ширина для слайдера */
+    width: 50%; /* Конкретная ширина для слайдера */
+    height: 43vh; /* Конкретная высота для слайдера */
+    position: relative;
+    overflow: hidden;
+}
+#containerVideo{
+    width: 100%; /* Конкретная ширина для слайдера */
     height: 43vh; /* Конкретная высота для слайдера */
     position: relative;
     overflow: hidden;
@@ -64,7 +63,7 @@ body, html {
 .image-slider {
     grid-column: 2 / 3; /* Размещаем во втором столбце */
     grid-row: 1 / 2; /* Размещаем в первой строке */
-    width: 30rem; /* Конкретная ширина для слайдера */
+    width: 50%; /* Конкретная ширина для слайдера */
     height: 43vh; /* Конкретная высота для слайдера */
     position: relative;
     overflow: hidden;
@@ -92,13 +91,13 @@ body, html {
     grid-column: 1 / -1; /* Растягиваем видеоконтейнер на всю ширину */
     width: 100%;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1200px) {
     #wrapper {
         grid-template-areas:
             "header header header"
             "sidebar content content"
             "footer footer footer";
-            grid-template-columns: 12em auto; /* Устанавливаем ширину sideBar и оставляем content заполнять оставшееся пространство */
+            grid-template-columns: 15% auto; /* Устанавливаем ширину sideBar и оставляем content заполнять оставшееся пространство */
     }
     #content {
         display: grid;
@@ -113,6 +112,6 @@ body, html {
         grid-column: 1 / 3; /* Размещаем в первом столбце */
     }
     #sideBar {
-        width: 12em; /* Устанавливаем ширину sideBar равной 12em */
+        width: 100%; /* Устанавливаем ширину sideBar равной 12em */
     }
 }
