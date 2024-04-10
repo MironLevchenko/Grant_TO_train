@@ -7,6 +7,7 @@ app.use(fileUpload({}));
 app.use(express.static('public'));
 const port = 3000
 
+
 // const pgp = require("pg-promise")(/*options*/);
 // const db = pgp("postgres://username:password@host:port/database");
 
@@ -20,7 +21,7 @@ const port = 3000
 
 app.post('/loadimg', (req, res) => {
     console.log(req.files);
-    req.files.photo.mv('../public/'+req.files.photo.name);
+    req.files.photo.mv('../public/img/denialOfService/'+req.files.photo.name);
 //     let test = 'my value';
 //     let content = {
 //         'important': 'value'

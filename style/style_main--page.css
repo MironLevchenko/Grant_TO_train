@@ -18,7 +18,7 @@ body, html {
 }
 .conImageS{
     margin-right: 5px;
-    background-color: aqua;
+    /* background-color: aqua;   */
     width: 37%;
     height: 100%;
 }
@@ -33,10 +33,10 @@ body, html {
         "header header header"
         "sidebar content content"
         "footer footer footer";
-    grid-template-columns: 12% auto;
+    grid-template-columns: 13% auto;
     min-height: 100vh; /* Минимальная высота вьюпорта */
     padding-bottom: 40px; /* Отступ снизу равен высоте футера */
-    grid-gap: 0; 
+    grid-gap: 0;
 }
 
 #header {
@@ -87,7 +87,7 @@ body, html {
     align-items: center;
 }
 #containerModel{
-    width: 50%; /* Конкретная ширина для слайдера */
+    width: 100%; /* Конкретная ширина для слайдера */
     height: 43vh; /* Конкретная высота для слайдера */
     position: relative;
     overflow: hidden;
@@ -101,7 +101,7 @@ body, html {
 .image-slider {
     grid-column: 2 / 3; /* Размещаем во втором столбце */
     grid-row: 1 / 2; /* Размещаем в первой строке */
-    width: 50%; /* Конкретная ширина для слайдера */
+    width: 100%; /* Конкретная ширина для слайдера */
     height: 43vh; /* Конкретная высота для слайдера */
     position: relative;
     overflow: hidden;
@@ -172,7 +172,7 @@ body, html {
     }
     .conImageS{
         margin-right: 5px;
-        background-color: aqua;
+        /* background-color: aqua; */
         width: 37%;
         height: 100%;
     }
