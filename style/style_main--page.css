@@ -35,7 +35,7 @@ body, html {
         "footer footer footer";
     grid-template-columns: 13% auto;
     min-height: 100vh; /* Минимальная высота вьюпорта */
-    padding-bottom: 40px; /* Отступ снизу равен высоте футера */
+    padding-bottom: 0px; /* Отступ снизу равен высоте футера */
     grid-gap: 0;
 }
 
@@ -53,6 +53,8 @@ body, html {
     /* gap: 20px;  */
 }
 #sideBar {
+    overflow: auto; /* Добавляем прокрутку при необходимости */
+    height: 95vh;
     grid-area: sidebar;
     display: flex;
     width: 100%;
@@ -93,6 +95,7 @@ body, html {
     overflow: hidden;
 }
 #containerVideo{
+    background-color: #f0f0f0;
     width: 100%; /* Конкретная ширина для слайдера */
     height: 43vh; /* Конкретная высота для слайдера */
     position: relative;
@@ -121,15 +124,19 @@ body, html {
 #containerIVM {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Два столбца одинаковой ширины */
-    gap: 0; /* Убираем отступы между элементами */
+    gap: 1em; /* Убираем отступы между элементами */
     width: 100%;
-    height: auto; /* Высота контейнера определяется содержимым */
+    height: 10em; /* Высота контейнера определяется содержимым */
 }
 #containerVideo {
     grid-column: 1 / -1; /* Растягиваем видеоконтейнер на всю ширину */
     width: 100%;
 }
-@media (max-width: 1570px) {
+#textOpisanie{
+    margin-left: 5px;
+    font-size: 3vh;
+}
+@media (max-width: 1300px) {
     #wrapper {
         grid-template-areas:
             "header header header"
@@ -165,7 +172,7 @@ body, html {
         margin-top: 10px;
         width: 95%;
         margin-left: 2%;
-        height: 7%;
+        height: 8%;
         flex-wrap: nowrap;
         align-items: center;
         /* justify-content: space-around; */
@@ -175,5 +182,10 @@ body, html {
         /* background-color: aqua; */
         width: 37%;
         height: 100%;
+    }
+    .video {
+        width: 100%; /* Растягиваем видео на всю ширину блока */
+        height: 100%; /* Растягиваем видео на всю высоту блока */
+        object-fit: cover; /* Заполнение видео без искажений */
     }
 }

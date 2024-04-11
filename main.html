@@ -14,7 +14,7 @@
     <div id="wrapper">
         <div id="header">
             <div id="container_namePage">
-                <h2 id="namePage">Название страницы</h2>
+                <h2 id="namePage">Локомотив "Ра-3"</h2>
             </div>
             <div id="headerBar">
             </div>
@@ -88,14 +88,23 @@
             </button>
         </div>
         <div id="content">
-            <div id="textTO"><p>Насыщенное описание локомотива</p></div>
+            <div id="textTO"><p id="textOpisanie">Насыщенное описание локомотива</p></div>
             <div id="containerIVM">
                 <div id="containerImage" class="image-slider"></div>
-                <div id="containerModel"></div>
-                <div id="containerVideo">видео</div>
+                <div id="containerModel">
+                    <video class="video"width="100%" height="100%" autoplay muted loop>
+                        <source src="3dAnimation\filter.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="containerVideo">
+                    <video class="video" width="100%" height="100%" controls loop>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video></div>
             </div>
         </div>
-        <div id="footer"></div>
+        <!-- <div id="footer"></div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
 </body>
