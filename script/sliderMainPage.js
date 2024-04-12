@@ -1,8 +1,9 @@
 function SliderForImageTO() {
     const slider = document.getElementById('containerImage');
     const imageUrls = [
-        "path/to/your/image1.jpg",
-        "path/to/your/image2.jpg",
+        "img/imgDetils/filter/FiltrTop1.png",
+        "img/imgDetils/filter/filtrTOp2.png",
+        "img/imgDetils/filter/filtrTOp3.png",
         // Добавьте столько URL-адресов изображений, сколько вам нужно
     ];
 

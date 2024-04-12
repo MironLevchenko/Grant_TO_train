@@ -47,14 +47,14 @@ body, html {
 #content {
     grid-area: content;
     background-color: hsl(0, 0%, 100%);
-    overflow-y: auto; /* Добавляет вертикальную прокрутку, если содержимое превышает высоту */
+    /* overflow-y: auto; Добавляет вертикальную прокрутку, если содержимое превышает высоту */
     display: grid;
     grid-template-columns: 1fr 1fr; /* Размеры могут быть адаптированы в зависимости от ваших нужд */
     /* gap: 20px;  */
 }
 #sideBar {
-    overflow: auto; /* Добавляем прокрутку при необходимости */
-    height: 95vh;
+    /* overflow: auto; Добавляем прокрутку при необходимости */
+    height: 100%;
     grid-area: sidebar;
     display: flex;
     width: 100%;
@@ -166,13 +166,13 @@ body, html {
         width: 100%; /* Устанавливаем ширину sideBar равной 12em */
     }
     .SideBarButton{
-        font-size: 23px;
+        font-size: 14px;
         font-family: 'Times New Roman', Times, serif;
         display: flex;
         margin-top: 10px;
         width: 95%;
         margin-left: 2%;
-        height: 8%;
+        height: 7%;
         flex-wrap: nowrap;
         align-items: center;
         /* justify-content: space-around; */
@@ -187,5 +187,16 @@ body, html {
         width: 100%; /* Растягиваем видео на всю ширину блока */
         height: 100%; /* Растягиваем видео на всю высоту блока */
         object-fit: cover; /* Заполнение видео без искажений */
+    }
+    .image-slider {
+        width: 100%; /* Конкретная ширина для слайдера */
+        height: 500px; /* Конкретная высота для слайдера */
+        position: relative;
+        overflow: hidden;
+    }
+    #textTO{
+        height: 30vh;
+        font-size: 16px;
+        overflow-wrap: break-word;
     }
 }
